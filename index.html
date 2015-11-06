@@ -1,0 +1,109 @@
+﻿ 
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Dear Weiwei ，Happy birthday ！！</span><br />
+				<span class="space"/><span class="comments">* I write a beautiful story by codes to celebrate ！！</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Weiwei"，"1989-11-08"</span>);<br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Huahua"，"1988-05-15"</span>);<br />
+				<span class="comments">//I still remember the moment I met you for the first time </span><br />
+				i.meet(u);<br />
+				i.remeber(u.name);<br />
+				<span class="comments">//Since then, I'm obsessed with you.  </span><br />
+				i.fallInLove(u);<br />
+				i.MrsRight = u;<br />
+				<span class="comments">// August 2, 2014, I say I love you, I will treat you well than myself.  </span><br />
+				<span class="comments">// When you accept, my world blossoms.</span><br />
+				Love we = <span class="keyword">new</span> Love(<span class="string">"Huahua"，"Weiwei"</span>);<br />
+                <span class="keyword">for</span> (day = 20150802; day <= Forever; day++) </span><br />
+                {<br />
+				<span class="placeholder"/><span class="comments">// Since then, We are deseing together.</span><br />
+				<span class="placeholder"/>we.dese(everyday);</span><br />
+				<span class="placeholder"/>we.travel("hangzhou","beijing","sichuan",...);</span><br />
+                <span class="placeholder"/>we.enjoy("so many many Delicious food");</span><br />
+				<span class="placeholder"/>we.fighting("Job","Degree Paper",...);</span><br />
+				<span class="placeholder"/>we.love + = day++;</span><br />
+				<span class="placeholder"/><span class="comments">//In the near future</span><br />
+				<span class="placeholder"/>we.marry();</span><br />
+				<span class="placeholder"/>we.have(baby);</span><br />
+				<span class="placeholder"/>we.travel(all over the world);</span><br />
+				}<br />
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* I want to say that I will always be with you<br />
+				<span class="space"/><span class="comments">* You are everything when you are with me, and everything is you when you are not.*/</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Weiwei , We have fallen in love for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						LOVE U FOREVER.<br/>
+						<div class="signature">- Huahua</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2013 Christine 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2014,07,01 );
+		together.setHours(24);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				adjustWordsPosition();
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
